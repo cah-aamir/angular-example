@@ -26,4 +26,5 @@ jobs:
     steps:
       - run: echo "$GITHUB_USER" >> $GITHUB_PATH
       - run: echo $DUMMY_VARIABLE
+      - run: echo "HOWDY!"
       
