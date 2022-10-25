@@ -16,7 +16,7 @@ env:
 jobs:
   build_android:
     env:
-      GITHUB_USER: ${{ secrets.GITHUB_USER }}
+      GITHUB_USER: ${{ secrets.REPO_USER }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # The type of runner that the job will run on
