@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Echo Prod
         run: echo "IN PROD"
-        if: ${{ github.event.inputs.build_type == 'prod' }}
+        if: github.event.inputs.build_type == 'prod'
       - name: Echo Debug
         run: echo "IN dev"
-        if: ${{ github.event.inputs.build_type == 'dev' }}
+        if: github.event.inputs.build_type == 'dev'
