@@ -1,0 +1,29 @@
+name: Test Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        type: choice
+        description: Select Build Type
+        options:
+        - dev
+        - prod
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  echo_env:
+    runs-on: macos-11
+
+    steps:
+      - uses: webfactory/ssh-agent@v0.4.1
+      - uses: actions/checkout@v2
+      - name: Echo Prod
+        run: echo "IN PROD"
+        if: ${{ github.event.inputs.build_type }} == 'prod'
+      - name: Flutter build Debug
+        run: echo "IN dev"
+        if: ${{ github.event.inputs.build_type }} == 'dev'
